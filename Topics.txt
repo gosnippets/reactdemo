@@ -1,0 +1,54 @@
+## MODULE 1: React JS with ES6
+    1. Why we go for React?
+    2. How to display view/template to the end user (components, JSX)
+    3. How to handle events.
+    4. How to take data from input controls (3) and validate.
+    5. How to handle AJAX.
+    6. How to render text dynamically in the view.
+    7. How to apply styles dynamically.
+    8. node js basics
+    9. React Code(client) + node JS(server) + MYSQL (End to End Application)
+    10. React Routing (create-react-app, create-react-component to get u r application structure) +
+    11. build + deployment.
+    12. Reusable components
+    13. Life cycle methods
+    14. HOC
+    15. Communication between components
+    16. Context
+    17. JSX
+    18. Lists (map), keys
+    19. Conditional rendering
+    20. State less vs state full
+    21. Controlled vs uncontrolled components
+    22. React fragment.
+    23. Test cases using Jest Framework.
+    24. Integrate with other libraries (React Table, React-spinner, React-Modal etc.)
+
+## MODULE 2: ES6
+    1. Introduction
+    2. Array Helper Methods
+    3. Let and Const
+    4. Template Literals
+    5. Arrow Functions
+    6. Default Function Parameters
+    7. Rest and Spread
+    8. Destructuring
+    9. Classes
+    10. Promises
+    11. Fetch
+
+## MODULE 3: React Hooks
+    1. useState
+    2. useEffect
+    3. useRef
+    4. useReducer
+    5. useMemo
+    6. useCallback
+    7. Custom Hooks
+    8. React hooks(client) + node JS(server) + MYSQL + webpack
+
+## MODULE 4: Redux with React
+    1. How to implement redux in react.
+    2. Redux logger
+    3. Redux thunk
+    4. (react + redux) client + node JS(server) + MYSQL
