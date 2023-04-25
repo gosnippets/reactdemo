@@ -3,9 +3,16 @@ Git commands
 2. git add .
 3. git commit -m "comment"
 4. git push
-
+5. git checkout branch_name (switch to another branch)
+6. git checkout -b branch_name (to create new branch)
 
 Create new react project:
 cmd: npx create-react-app app-name
 App.js-> Register form
         fields name: fullname, contact, email, password
+
+
+Login Form:
+        emailid
+        password
+        Login button
