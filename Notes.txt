@@ -5,6 +5,7 @@ Git commands
 4. git push
 5. git checkout branch_name (switch to another branch)
 6. git checkout -b branch_name (to create new branch)
+7. git pull
 
 Create new react project:
 cmd: npx create-react-app app-name
