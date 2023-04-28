@@ -6,7 +6,7 @@ import AdditionSubtraction from "./components/AdditionSubtraction";
 
 function App() {
   return (<>
-    {/* <Counter /> */}
+    <Counter />
     <AdditionSubtraction/>
   </>);
 }
