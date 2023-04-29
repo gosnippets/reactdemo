@@ -3,14 +3,18 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Counter from "./components/Counter";
 import AdditionSubtraction from "./components/AdditionSubtraction";
-import RegisterComponent from "./28-04-23/RegisterComponent";
+import RegisterComponent from "./StateAndProps/RegisterComponent";
+import StateExample from "./StateAndProps/StateExample";
+import ConditionalComponent from "./Conditional/ConditionalComponent";
 
 function App() {
   return (<>
     {/* <Counter />
     <AdditionSubtraction/> */}
-    <h2>This is App component...</h2>
-    <RegisterComponent/>
+    {/* <h2>This is App component...</h2> */}
+    {/* <RegisterComponent/> */}
+    {/* <StateExample/> */}
+    <ConditionalComponent/>
   </>);
 }
 

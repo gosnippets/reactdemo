@@ -3,6 +3,7 @@ import { useState } from "react"
 
 
 export default function RegisterComponent() {
+    // State example
     const [fullname, setFullname] = useState("");
     const [email, setEmail] = useState("");
     const [contact, setContact] = useState("");

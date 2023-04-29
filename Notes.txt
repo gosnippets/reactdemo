@@ -29,3 +29,7 @@ Child component: Show value
 add switch button/checkbox;
 render Child1 component if false
 else render Child2 component if true
+
+===================================================
+Student List: name, branch, emailId 
+Show above details in child component.

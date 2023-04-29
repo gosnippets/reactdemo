@@ -22,3 +22,11 @@ code {
 .main {
   margin: 50px;
 }
+
+.colorRed {
+  color:red;
+}
+
+.colorGreen {
+  color:green;
+}
