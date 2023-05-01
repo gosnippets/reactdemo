@@ -6,6 +6,7 @@ import AdditionSubtraction from "./components/AdditionSubtraction";
 import RegisterComponent from "./StateAndProps/RegisterComponent";
 import StateExample from "./StateAndProps/StateExample";
 import ConditionalComponent from "./Conditional/ConditionalComponent";
+import ReuseableComponent from "./reuseable/ReuseableComponent";
 
 function App() {
   return (<>
@@ -14,7 +15,8 @@ function App() {
     {/* <h2>This is App component...</h2> */}
     {/* <RegisterComponent/> */}
     {/* <StateExample/> */}
-    <ConditionalComponent/>
+    {/* <ConditionalComponent/> */}
+    <ReuseableComponent/>
   </>);
 }
 

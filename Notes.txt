@@ -6,30 +6,14 @@ Git commands
 5. git checkout branch_name (switch to another branch)
 6. git checkout -b branch_name (to create new branch)
 7. git pull
+8. git merge (merge changes from another branch)
 
-Create new react project:
-cmd: npx create-react-app app-name
-App.js-> Register form
-        fields name: fullname, contact, email, password
+# Topics
+1. To create new react project (npx create-react-app project-name)
+2. Created components in project
+3. State and Props 
+4. Conditional (styles, className, components render)
+5. Event Handling (onChange, onClick)
+6. Reusable component 
 
-
-Login Form:
-        emailid
-        password
-        Login button
-
-
-Parent component: input field(type=number), addition and subtraction button
-Child component: Show value
-0+5 =5
-5+10=15
-
-
-===================================================
-add switch button/checkbox;
-render Child1 component if false
-else render Child2 component if true
-
-===================================================
-Student List: name, branch, emailId 
-Show above details in child component.
+ 
