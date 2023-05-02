@@ -7,6 +7,7 @@ import RegisterComponent from "./StateAndProps/RegisterComponent";
 import StateExample from "./StateAndProps/StateExample";
 import ConditionalComponent from "./Conditional/ConditionalComponent";
 import ReuseableComponent from "./reuseable/ReuseableComponent";
+import ReactHooks from "./ReactHooks/ReactHooks";
 
 function App() {
   return (<>
@@ -16,7 +17,8 @@ function App() {
     {/* <RegisterComponent/> */}
     {/* <StateExample/> */}
     {/* <ConditionalComponent/> */}
-    <ReuseableComponent/>
+    {/* <ReuseableComponent/> */}
+    <ReactHooks/>
   </>);
 }
 

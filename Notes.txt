@@ -14,6 +14,15 @@ Git commands
 3. State and Props 
 4. Conditional (styles, className, components render)
 5. Event Handling (onChange, onClick)
-6. Reusable component 
+6. Reusable component
+7. React Hooks
+   1. useState
+   2. useEffect
+   3. useRef
+   4. useReducer
+   5. useMemo
+   6. useCallback
+   7. Custom Hooks
 
- 
+==========================
+input field: Name, contact, email
