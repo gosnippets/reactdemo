@@ -36,5 +36,5 @@ studentList =[{
    conatct
 }]
 
-Serach (add input feild to search),
+Serach (add input field to search),
 Delete
