@@ -26,3 +26,15 @@ Git commands
 
 ==========================
 input field: Name, contact, email
+
+=================================
+
+studentList =[{
+   id,
+   name,
+   branch,
+   conatct
+}]
+
+Serach (add input feild to search),
+Delete
