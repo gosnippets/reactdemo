@@ -38,3 +38,9 @@ studentList =[{
 
 Serach (add input field to search),
 Delete
+
+===============================
+number;
+studentList ['Ravi']
+
+find square number from number when number state is changed..
