@@ -57,9 +57,9 @@ export default function UseMemoExample() {
             <div><h2>Squared Value: {squaredNum}</h2></div>
             <input type='number' onChange={(e) => setNumber(e.target.value)} placeholder='Enter number' />
 
-            {/* <br /><br />
+            <br /><br />
             <button onClick={() => setCount(count + 1)}>Set count</button>
-            <h2>Counter: {count}</h2> */}
+            <h2>Counter: {count}</h2>
 
         </>
     )
