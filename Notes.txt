@@ -48,3 +48,53 @@ find square number from number when number state is changed..
 ======================================
 state: count, todos
 useCallback
+
+=================== Syntax ==========================
+// state
+const [count, setCount] = useState(0)
+
+// useEffect
+useEffect(()=>{
+   console.log("useEffect Called");
+})
+
+useEffect(()=>{
+   console.log("useEffect Called");
+},[count])
+
+// useRef
+const count = useRef(10);
+console.log(count.current)
+
+const inputElement = useRef();
+<input type='text' ref={inputElement} placeholder='Enter text..' />
+
+// useReducer
+const countReducer = (state, action) => {
+    switch (action.type) {
+        case "DECREASE":
+            return state - 1;
+        case "INCREASE":
+            return state + 1;
+        default:
+            return state;
+    }
+}
+const [count, dispatch] = useReducer(countReducer, 10)
+
+// useMemo
+const squaredNum = useMemo(() => squareNum(number), [number])
+
+//useCallback
+const squaredNumFun = useCallback((num) => { setNumber(Math.pow(num, 2)) }, [number])
+
+// Custom Hooks
+const useTodos = (todos) => {
+
+    const updateTodo = (id) => { }
+
+    const deleteTodo = (id) => { }
+
+    return [todos, updateTodo, deleteTodo]
+}
+const [todos, updateTodo, deleteTodo] = useTodos(initialTodos);

@@ -5,6 +5,7 @@ import UseRefExample from './UseRefExample'
 import UseReducerExample from './UseReducerExample'
 import UseMemoExample from './UseMemoExample'
 import UseCallbackExample from './UseCallbackExample'
+import UseCustomHookExample from './UseCustomHookExample'
 
 export default function ReactHooks() {
   return (
@@ -14,7 +15,8 @@ export default function ReactHooks() {
       {/* <UseRefExample/> */}
       {/* <UseReducerExample/> */}
       {/* <UseMemoExample/> */}
-      <UseCallbackExample/>
+      {/* <UseCallbackExample/> */}
+      <UseCustomHookExample />
     </>
   )
 }
