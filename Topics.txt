@@ -44,8 +44,9 @@
     4. useReducer
     5. useMemo
     6. useCallback
-    7. Custom Hooks
-    8. React hooks(client) + node JS(server) + MYSQL + webpack
+    7. useContext
+    8. Custom Hooks
+    9. React hooks(client) + node JS(server) + MYSQL + webpack
 
 ## MODULE 4: Redux with React
     1. How to implement redux in react.

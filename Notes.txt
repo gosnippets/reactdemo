@@ -22,7 +22,8 @@ Git commands
    4. useReducer
    5. useMemo
    6. useCallback
-   7. Custom Hooks
+   7. useContext
+   8. Custom Hooks
 
 ==========================
 input field: Name, contact, email
@@ -98,3 +99,19 @@ const useTodos = (todos) => {
     return [todos, updateTodo, deleteTodo]
 }
 const [todos, updateTodo, deleteTodo] = useTodos(initialTodos);
+
+
+// useContext 
+
+const UserContext = createContext({ name: "Surya" })
+
+export default function UseContextExample() {
+    const user = { name: "Ravi" }
+    return (
+        <UserContext.Provider value={user}>
+            <ChildComponentOne user={user} />
+        </UserContext.Provider>
+    )
+}
+// To receive the context value.
+const user = useContext(UserContext)

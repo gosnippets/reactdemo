@@ -6,6 +6,7 @@ import UseReducerExample from './UseReducerExample'
 import UseMemoExample from './UseMemoExample'
 import UseCallbackExample from './UseCallbackExample'
 import UseCustomHookExample from './UseCustomHookExample'
+import UseContextExample from './UseContextExample'
 
 export default function ReactHooks() {
   return (
@@ -16,7 +17,8 @@ export default function ReactHooks() {
       {/* <UseReducerExample/> */}
       {/* <UseMemoExample/> */}
       {/* <UseCallbackExample/> */}
-      <UseCustomHookExample />
+      <UseContextExample />
+      {/* <UseCustomHookExample /> */}
     </>
   )
 }
