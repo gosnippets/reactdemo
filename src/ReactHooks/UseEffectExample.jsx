@@ -4,8 +4,12 @@ export default function UseEffectExample() {
     const [count, setCount] = React.useState(0)
     const [name, setName] = useState("");
 
+    useEffect(()=>{
+        console.log("useEffect - ", count)
+    })
+
     useEffect(() => {
-        console.log('useEffect');
+        console.log('useEffect[]');
     },[])
 
     useEffect(() => {

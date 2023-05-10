@@ -73,30 +73,62 @@ import React, { useEffect, useReducer } from 'react'
 
 // ================================ Second Example ==============================
 
-const countReducer = (state, action) => {
-    switch (action.type) {
-        case "DECREASE":
-            return state - 1;
-        case "INCREASE":
-            return state + 1;
-        default:
-            return state;
+// const countReducer = (state, action) => {
+//     switch (action.type) {
+//         case "DECREASE":
+//             return state - 1;
+//         case "INCREASE":
+//             return state + 1;
+//         default:
+//             return state;
+//     }
+// }
+
+// export default function UseReducerExample() {
+//     const [count, dispatch] = useReducer(countReducer, 10)
+
+//     useEffect(() => {
+//         console.log("Count", count);
+//     }, [count])
+
+//     return (
+//         <div style={{ margin: "30px" }}>
+//             <h2>{count}</h2>
+//             <button onClick={() => dispatch({ type: "DECREASE" })}>Decrease Count</button>
+//             <button onClick={() => dispatch({ type: "INCREASE" })}>Increase Count</button>
+//         </div>
+//     )
+
+// }
+
+// ==================== Third Example =============================
+
+
+const myReducer = (state, action) => {
+    console.log("Action", action)
+    return {
+        ...state,
+        [action.name]: action.value
     }
 }
 
 export default function UseReducerExample() {
-    const [count, dispatch] = useReducer(countReducer, 10)
+    const [formData, dispatch] = useReducer(myReducer, { name: "", email: "", password: "" })
 
-    useEffect(() => {
-        console.log("Count", count);
-    }, [count])
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        dispatch({ name, value })
+    }
 
-    return (
-        <div style={{ margin: "30px" }}>
-            <h2>{count}</h2>
-            <button onClick={() => dispatch({ type: "DECREASE" })}>Decrease Count</button>
-            <button onClick={() => dispatch({ type: "INCREASE" })}>Increase Count</button>
-        </div>
-    )
+    const showData = () => {
+        console.log("formData", formData)
+    }
+
+    return (<>
+        <input type='text' value={formData.name} onChange={handleChange} name='name' placeholder='Name' />
+        <input type='text' value={formData.email} onChange={handleChange} name='email' placeholder='Email' />
+        <input type='password' value={formData.password} onChange={handleChange} name='password' placeholder='Password' />
+        <button onClick={showData}>Show Data</button>
+    </>)
 
 }

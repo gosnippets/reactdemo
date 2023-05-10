@@ -9,12 +9,18 @@ export default function UseCallbackExample() {
         setNumber(Math.pow(num, 2))
     }, [number])
 
+    const cubedNum = useCallback((num) => {
+        console.log("cubedNum", num)
+        setCount(Math.pow(num, 3))
+    }, [count])
+
     return (
         <>
             <ShowNumber number={number} setNumber={squaredNum}/>
             <br /><br />
-            <button onClick={() => setCount(count + 1)}>Set count</button>
+            <button onClick={() => cubedNum(count + 1)}>Set count</button>
             <h2>Counter: {count}</h2>
+            <h2>CounterCubed: {count}</h2>
 
         </>
     )
