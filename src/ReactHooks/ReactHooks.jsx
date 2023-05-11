@@ -17,8 +17,8 @@ export default function ReactHooks() {
       {/* <UseReducerExample/> */}
       {/* <UseMemoExample/> */}
       {/* <UseCallbackExample/> */}
-      <UseContextExample />
-      {/* <UseCustomHookExample /> */}
+      {/* <UseContextExample /> */}
+      <UseCustomHookExample />
     </>
   )
 }
