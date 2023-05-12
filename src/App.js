@@ -8,6 +8,7 @@ import StateExample from "./StateAndProps/StateExample";
 import ConditionalComponent from "./Conditional/ConditionalComponent";
 import ReuseableComponent from "./reuseable/ReuseableComponent";
 import ReactHooks from "./ReactHooks/ReactHooks";
+import BootstrapExamples from "./Bootstrap/BootstrapExamples";
 
 function App() {
   return (<>
@@ -18,7 +19,8 @@ function App() {
     {/* <StateExample/> */}
     {/* <ConditionalComponent/> */}
     {/* <ReuseableComponent/> */}
-    <ReactHooks/>
+    {/* <ReactHooks/> */}
+    <BootstrapExamples />
   </>);
 }
 
