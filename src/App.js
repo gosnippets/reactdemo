@@ -9,6 +9,8 @@ import ConditionalComponent from "./Conditional/ConditionalComponent";
 import ReuseableComponent from "./reuseable/ReuseableComponent";
 import ReactHooks from "./ReactHooks/ReactHooks";
 import BootstrapExamples from "./Bootstrap/BootstrapExamples";
+import MaterialUI from "./mui/MaterialUI";
+import FetchExample from "./API_Fetch_Axios/FetchExample";
 
 function App() {
   return (<>
@@ -20,7 +22,9 @@ function App() {
     {/* <ConditionalComponent/> */}
     {/* <ReuseableComponent/> */}
     {/* <ReactHooks/> */}
-    <BootstrapExamples />
+    {/* <BootstrapExamples /> */}
+    {/* <MaterialUI/> */}
+    <FetchExample/>
   </>);
 }
 
