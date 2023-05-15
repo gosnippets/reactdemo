@@ -23,8 +23,8 @@ function App() {
     {/* <ReuseableComponent/> */}
     {/* <ReactHooks/> */}
     {/* <BootstrapExamples /> */}
-    {/* <MaterialUI/> */}
-    <FetchExample/>
+    <MaterialUI/>
+    {/* <FetchExample/> */}
   </>);
 }
 
