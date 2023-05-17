@@ -1,6 +1,6 @@
 import { Container, Table, TableHead, TableCell, TableContainer, TableBody, TableRow, Paper, Tooltip } from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
-import { createAccount, getAccounts, getUser, getUsers } from './ApiCollection';
+import { createAccount, deleteAccount, getAccounts, getUser, getUsers, updateAccount } from './ApiCollection';
 import { Card, CardContent, Typography } from '@mui/material';
 
 
@@ -8,6 +8,8 @@ export default function FetchExample() {
     const [userList, setUserList] = useState([])
     const [accountList, setAccountList] = useState([])
     const [accountKeys, setAccountKeys] = useState([])
+    const [accountEditData, setAccountEditData] = useState({})
+    const [accountEditID, setAccountEditID] = useState()
     const [user, setUser] = useState()
 
     const usernameRef = useRef();
@@ -35,7 +37,7 @@ export default function FetchExample() {
         setUser(data);
     }
 
-    const handleSubmit = async() => {
+    const handleSubmit = async () => {
         const username = usernameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
@@ -47,11 +49,31 @@ export default function FetchExample() {
         }
     }
 
+    const handleEdit = (id) => {
+        setAccountEditID(id);
+        setAccountEditData(accountList[id])
+        console.log("id", id, accountList[id])
+    }
+
+    const handleChangeAccount = (e) => {
+        setAccountEditData({ ...accountEditData, [e.target.name]: e.target.value })
+    }
+
+    const handleUpdateAccount = async () => {
+        console.log("accountEditData", accountEditData)
+        await updateAccount(accountEditID, accountEditData);
+        getAllAccounts();
+    }
+
+    const handleDeleteAccount = async(id)=>{
+        await deleteAccount(id);
+        getAllAccounts();
+    }
 
     return (
-        <div>
-            <h1>Fetch Example</h1>
-            <ul>
+        <div className='m-5'>
+
+            {/* <ul>
                 {userList.map((user, index) => <li key={user.id}>{user.id}. {user.name} <button onClick={() => getSingleUser(user.id)}>Show Details</button></li>)}
             </ul>
 
@@ -65,16 +87,17 @@ export default function FetchExample() {
 
                     </CardContent>
                 </Card>
-            )}
-
-            <input type='text' name="username" ref={usernameRef} placeholder='Username' />
-            <input type='email' name="email" ref={emailRef} placeholder='Email' />
-            <input type='password' name="password" ref={passwordRef} placeholder='Password' />
-            <button onClick={handleSubmit}>Add Account</button>
-
+            )} */}
+            <div className='mb-4'>
+                <h1>Add Account</h1>
+                <input type='text' name="username" ref={usernameRef} placeholder='Username' />
+                <input type='email' name="email" ref={emailRef} placeholder='Email' />
+                <input type='password' name="password" ref={passwordRef} placeholder='Password' />
+                <button onClick={handleSubmit}>Add Account</button>
+            </div>
 
             <h2> Account List</h2>
-            <TableContainer component={Paper} className='my-5'>
+            <TableContainer component={Paper} className='mb-5'>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
@@ -82,6 +105,7 @@ export default function FetchExample() {
                             <TableCell>Username</TableCell>
                             <TableCell>Email</TableCell>
                             <TableCell>Password</TableCell>
+                            <TableCell>Actions</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -94,12 +118,24 @@ export default function FetchExample() {
                                 <TableCell >{accountList[id].username}</TableCell>
                                 <TableCell >{accountList[id].email}</TableCell>
                                 <TableCell>{accountList[id].password}</TableCell>
+                                <TableCell>
+                                    <button onClick={() => handleEdit(id)}>Edit</button>
+                                    <button onClick={() => handleDeleteAccount(id)}>Delete</button>
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
                 </Table>
             </TableContainer>
-
+            {accountEditID && (
+                <div className='mb-4'>
+                    <h1>Update Account</h1>
+                    <input type='text' name="username" onChange={handleChangeAccount} value={accountEditData["username"]} placeholder='Username' />
+                    <input type='email' name="email" onChange={handleChangeAccount} value={accountEditData["email"]} placeholder='Email' />
+                    <input type='password' name="password" onChange={handleChangeAccount} value={accountEditData["password"]} placeholder='Password' />
+                    <button onClick={handleUpdateAccount}>Update Account</button>
+                </div>
+            )}
         </div>
     )
 }

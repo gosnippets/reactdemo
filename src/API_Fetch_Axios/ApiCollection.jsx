@@ -29,7 +29,6 @@ export const getAccount = async (id) => {
 }
 
 export const createAccount = async (data) => {
-    console.log("Data", data);
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -40,3 +39,30 @@ export const createAccount = async (data) => {
     })
     return resData;
 }
+
+
+export const updateAccount = async (id, data) => {
+    console.log("Id", id, "Data", data)
+    const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    }
+    const resData = await fetch(API_BASE_URL + id, requestOptions).then((res) => res.json()).then((account) => {
+        return account;
+    })
+    return resData;
+}
+
+export const deleteAccount = async (id) => {
+    console.log("Id", id)
+    const requestOptions = {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' }
+    }
+    const resData = await fetch(API_BASE_URL + "delete/" + id, requestOptions).then((res) => res.json()).then((account) => {
+        return account;
+    })
+    return resData;
+}
+
