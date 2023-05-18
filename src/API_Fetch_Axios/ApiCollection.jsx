@@ -3,6 +3,14 @@ import { API_BASE_URL } from "../constants/Constatnts";
 const userApiUrl = "https://jsonplaceholder.typicode.com/users/";
 
 export const getUsers = async () => {
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            "Authorization": "Bearer my-token",
+            "My-custom-header": "This is custom header"
+        }
+    }
     const data = await fetch(userApiUrl).then((res) => res.json()).then((users) => {
         return users;
     })
@@ -19,7 +27,14 @@ export const getUser = async (id) => {
 // ================= Account API ========================
 
 export const getAccounts = async () => {
-    const data = await fetch(API_BASE_URL + "list").then((res) => res.json()).then((accounts) => {
+    const requestOptions = {
+        headers: {
+            'Content-Type': 'application/json',
+            "Authorization": "Bearer my-token",
+            "My-custom-header": "This is custom header"
+        }
+    }
+    const data = await fetch(API_BASE_URL + "list", requestOptions).then((res) => res.json()).then((accounts) => {
         return accounts;
     })
     return data;
@@ -31,7 +46,11 @@ export const getAccount = async (id) => {
 export const createAccount = async (data) => {
     const requestOptions = {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+            'Content-Type': 'application/json',
+            "Authorization": "Bearer my-token",
+            "My-custom-header": "This is custom header"
+        },
         body: JSON.stringify(data)
     }
     const resData = await fetch(API_BASE_URL + "addaccount", requestOptions).then((res) => res.json()).then((account) => {
@@ -39,7 +58,6 @@ export const createAccount = async (data) => {
     })
     return resData;
 }
-
 
 export const updateAccount = async (id, data) => {
     console.log("Id", id, "Data", data)

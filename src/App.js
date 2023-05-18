@@ -11,6 +11,7 @@ import ReactHooks from "./ReactHooks/ReactHooks";
 import BootstrapExamples from "./Bootstrap/BootstrapExamples";
 import MaterialUI from "./mui/MaterialUI";
 import FetchExample from "./API_Fetch_Axios/FetchExample";
+import AxiosExample from "./API_Fetch_Axios/AxiosExample";
 
 function App() {
   return (<>
@@ -24,7 +25,8 @@ function App() {
     {/* <ReactHooks/> */}
     {/* <BootstrapExamples /> */}
     {/* <MaterialUI/> */}
-    <FetchExample/>
+    {/* <FetchExample/> */}
+    <AxiosExample />
   </>);
 }
 
