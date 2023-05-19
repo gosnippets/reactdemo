@@ -120,3 +120,16 @@ const user = useContext(UserContext)
 ===========================================
 1. Create Login and register form inside Card using bootstrap
 2. Create TODO project using Bootstrap (Card)
+
+===============================================
+# React Router Dom:
+ 1. Import BrowserRouter
+ 2. Import Routes
+ 3. Import Route
+
+ Home, About, Blog, Contact Us 
+
+ Account
+ Home--> All account list
+ account/:id---> Account details
+ account/edit/:id--> Account update
