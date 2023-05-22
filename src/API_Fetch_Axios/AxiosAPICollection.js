@@ -11,6 +11,15 @@ export const getAccounts = () => {
     return axios.get(API_BASE_URL + "list", { headers });
 }
 
+export const getAccountDetails = (id) => {
+    const headers = {
+        'Content-Type': 'application/json',
+        "Authorization": "Bearer my-token",
+        "My-custom-header": "This is custom header"
+    }
+    return axios.get(API_BASE_URL + id, { headers });
+}
+
 export const createAccount = (data) => {
 
     const headers = {
