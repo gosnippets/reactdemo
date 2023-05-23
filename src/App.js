@@ -24,6 +24,9 @@ import AccountLayout from "./routersExample/accounts/AccountLayout";
 import AddNewAccount from "./routersExample/accounts/AddNewAccount";
 import EditAccountDetails from "./routersExample/accounts/EditAccountDetails";
 import AccountDetails from "./routersExample/accounts/AccountDetails";
+import StateLessComponent from "./StateAndProps/StateLessComponent";
+import StateFullComponent from "./StateAndProps/StateFullComponent";
+import HighOrderComponent from "./StateAndProps/HighOrderComponent";
 
 function App() {
   return (<>
@@ -40,7 +43,7 @@ function App() {
     {/* <FetchExample/> */}
     {/* <AxiosExample /> */}
 
-    <BrowserRouter>
+    {/* <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -57,7 +60,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
 
     {/* <Router>
       <Switch>
@@ -65,6 +68,10 @@ function App() {
          <Route path="/about" component={<About />} />
       </Switch>
     </Router> */}
+
+    {/* <StateLessComponent/> */}
+    {/* <StateFullComponent/> */}
+    <HighOrderComponent/>
   </>);
 }
 
