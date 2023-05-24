@@ -27,6 +27,8 @@ import AccountDetails from "./routersExample/accounts/AccountDetails";
 import StateLessComponent from "./StateAndProps/StateLessComponent";
 import StateFullComponent from "./StateAndProps/StateFullComponent";
 import HighOrderComponent from "./StateAndProps/HighOrderComponent";
+import StateAndPropsExample from "./ClassComponents/StateAndPropsExample";
+import FormExample from "./ClassComponents/FormExample";
 
 function App() {
   return (<>
@@ -71,7 +73,10 @@ function App() {
 
     {/* <StateLessComponent/> */}
     {/* <StateFullComponent/> */}
-    <HighOrderComponent/>
+    {/* <HighOrderComponent/> */}
+    {/* Class components example  */}
+    {/* <StateAndPropsExample/> */}
+    <FormExample />
   </>);
 }
 
