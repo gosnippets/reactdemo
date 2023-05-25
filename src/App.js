@@ -29,6 +29,9 @@ import StateFullComponent from "./StateAndProps/StateFullComponent";
 import HighOrderComponent from "./StateAndProps/HighOrderComponent";
 import StateAndPropsExample from "./ClassComponents/StateAndPropsExample";
 import FormExample from "./ClassComponents/FormExample";
+import ConstructorAndRender from "./LifecycleMethods/ConstructorAndRender";
+import ComponentDidMountExample from "./LifecycleMethods/ComponentDidMountExample";
+import GetDerivedStateFromPropsExample from "./LifecycleMethods/GetDerivedStateFromPropsExample";
 
 function App() {
   return (<>
@@ -76,7 +79,12 @@ function App() {
     {/* <HighOrderComponent/> */}
     {/* Class components example  */}
     {/* <StateAndPropsExample/> */}
-    <FormExample />
+    {/* <FormExample /> */}
+
+    {/* Lifecycle Method  */}
+    {/* <ConstructorAndRender/> */}
+    {/* <ComponentDidMountExample/> */}
+    <GetDerivedStateFromPropsExample/>
   </>);
 }
 
