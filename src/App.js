@@ -32,6 +32,8 @@ import FormExample from "./ClassComponents/FormExample";
 import ConstructorAndRender from "./LifecycleMethods/ConstructorAndRender";
 import ComponentDidMountExample from "./LifecycleMethods/ComponentDidMountExample";
 import GetDerivedStateFromPropsExample from "./LifecycleMethods/GetDerivedStateFromPropsExample";
+import ShouldComponentUpdateExample from "./LifecycleMethods/ShouldComponentUpdateExample";
+import GetSnapshotBeforeUpdateExample from "./LifecycleMethods/GetSnapshotBeforeUpdateExample";
 
 function App() {
   return (<>
@@ -84,7 +86,9 @@ function App() {
     {/* Lifecycle Method  */}
     {/* <ConstructorAndRender/> */}
     {/* <ComponentDidMountExample/> */}
-    <GetDerivedStateFromPropsExample/>
+    {/* <GetDerivedStateFromPropsExample/> */}
+    {/* <ShouldComponentUpdateExample/> */}
+    <GetSnapshotBeforeUpdateExample/>
   </>);
 }
 
