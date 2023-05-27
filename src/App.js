@@ -34,6 +34,9 @@ import ComponentDidMountExample from "./LifecycleMethods/ComponentDidMountExampl
 import GetDerivedStateFromPropsExample from "./LifecycleMethods/GetDerivedStateFromPropsExample";
 import ShouldComponentUpdateExample from "./LifecycleMethods/ShouldComponentUpdateExample";
 import GetSnapshotBeforeUpdateExample from "./LifecycleMethods/GetSnapshotBeforeUpdateExample";
+import ComponentDidUpdateExample from "./LifecycleMethods/ComponentDidUpdateExample";
+import ComponentWillUnmountExample from "./LifecycleMethods/ComponentWillUnmountExample";
+import ComponentDidCatchExample from "./LifecycleMethods/ComponentDidCatchExample";
 
 function App() {
   return (<>
@@ -88,7 +91,10 @@ function App() {
     {/* <ComponentDidMountExample/> */}
     {/* <GetDerivedStateFromPropsExample/> */}
     {/* <ShouldComponentUpdateExample/> */}
-    <GetSnapshotBeforeUpdateExample/>
+    {/* <GetSnapshotBeforeUpdateExample/> */}
+    {/* <ComponentDidUpdateExample /> */}
+    {/* <ComponentWillUnmountExample /> */}
+    <ComponentDidCatchExample/>
   </>);
 }
 
