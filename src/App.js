@@ -37,6 +37,7 @@ import GetSnapshotBeforeUpdateExample from "./LifecycleMethods/GetSnapshotBefore
 import ComponentDidUpdateExample from "./LifecycleMethods/ComponentDidUpdateExample";
 import ComponentWillUnmountExample from "./LifecycleMethods/ComponentWillUnmountExample";
 import ComponentDidCatchExample from "./LifecycleMethods/ComponentDidCatchExample";
+import FunctionFormikExample from "./formik/FunctionFormikExample";
 
 function App() {
   return (<>
@@ -94,7 +95,8 @@ function App() {
     {/* <GetSnapshotBeforeUpdateExample/> */}
     {/* <ComponentDidUpdateExample /> */}
     {/* <ComponentWillUnmountExample /> */}
-    <ComponentDidCatchExample/>
+    {/* <ComponentDidCatchExample/> */}
+    <FunctionFormikExample/>
   </>);
 }
 
