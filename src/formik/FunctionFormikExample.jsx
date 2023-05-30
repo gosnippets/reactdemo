@@ -1,13 +1,6 @@
-import { useFormik } from 'formik'
-import * as Joi from 'joi';
+import { useFormik } from 'formik';
 import * as Yup from "yup";
 import React from 'react'
-
-const SignupSchema = Joi.object({
-    name: Joi.string().required(),
-    email: Joi.string(),
-    password: Joi.string()
-});
 
 const SignupSchema2 = Yup.object().shape({
     name: Yup.string().required("Name is Required"),
@@ -20,8 +13,9 @@ export default function FunctionFormikExample() {
     const formik = useFormik({
         initialValues: { name: "", email: "", password: "" },
         validationSchema: SignupSchema2,
-        onSubmit: (values) => {
+        onSubmit: (values, {resetForm}) => {
             console.log('submit', values)
+            resetForm();
         }
     })
 
@@ -30,20 +24,20 @@ export default function FunctionFormikExample() {
             <h1>Function Formik Example</h1>
             <form onSubmit={formik.handleSubmit}>
                 <div className='row'>
-                    <div className='col-12'>
+                    <div className='col-12 mb-3'>
                         <label htmlFor='name' className='mb-1 fw-bold'>Name</label>
-                        <input type='text' value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} className='form-control mb-3' id='name' name='name' placeholder='Enter name' />
-                        {formik.errors.name && <div className='text-danger'>{formik.errors.name}</div>}
+                        <input type='text' value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} className='form-control' id='name' name='name' placeholder='Enter name' />
+                        {formik.touched.name && formik.errors.name && <div className='text-danger'>{formik.errors.name}</div>}
                     </div>
-                    <div className='col-12'>
+                    <div className='col-12 mb-3'>
                         <label htmlFor='email' className='mb-1 fw-bold'>Email</label>
-                        <input type='email' value={formik.values.email} onChange={formik.handleChange} onBlur={formik.handleBlur} className='form-control mb-3' id='email' name='email' placeholder='Enter email' />
-                        {formik.errors.email && <div className='text-danger'>{formik.errors.email}</div>}
+                        <input type='email' value={formik.values.email} onChange={formik.handleChange} onBlur={formik.handleBlur} className='form-control' id='email' name='email' placeholder='Enter email' />
+                        {formik.touched.name && formik.errors.email && <div className='text-danger'>{formik.errors.email}</div>}
                     </div>
-                    <div className='col-12'>
+                    <div className='col-12 mb-3'>
                         <label htmlFor='password' className='mb-1 fw-bold'>Password</label>
-                        <input type='password' value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} className='form-control mb-3' id='password' name='password' placeholder='Enter password' />
-                        {formik.errors.password && <div className='text-danger'>{formik.errors.password}</div>}
+                        <input type='password' value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} className='form-control' id='password' name='password' placeholder='Enter password' />
+                        {formik.touched.name && formik.errors.password && <div className='text-danger'>{formik.errors.password}</div>}
                     </div>
                     <div className='col-12'>
                         <button type='submit' className='btn btn-primary form-control' disabled={!(formik.isValid && formik.dirty)}>Submit</button>

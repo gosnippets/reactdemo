@@ -38,6 +38,8 @@ import ComponentDidUpdateExample from "./LifecycleMethods/ComponentDidUpdateExam
 import ComponentWillUnmountExample from "./LifecycleMethods/ComponentWillUnmountExample";
 import ComponentDidCatchExample from "./LifecycleMethods/ComponentDidCatchExample";
 import FunctionFormikExample from "./formik/FunctionFormikExample";
+import ClassFormikExample from "./formik/ClassFormikExample";
+import FunctionFormikExample2 from "./formik/FunctionFormikExample2";
 
 function App() {
   return (<>
@@ -96,7 +98,9 @@ function App() {
     {/* <ComponentDidUpdateExample /> */}
     {/* <ComponentWillUnmountExample /> */}
     {/* <ComponentDidCatchExample/> */}
-    <FunctionFormikExample/>
+    {/* <FunctionFormikExample/> */}
+    {/* <ClassFormikExample/> */}
+    <FunctionFormikExample2/>
   </>);
 }
 
