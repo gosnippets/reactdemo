@@ -40,6 +40,8 @@ import ComponentDidCatchExample from "./LifecycleMethods/ComponentDidCatchExampl
 import FunctionFormikExample from "./formik/FunctionFormikExample";
 import ClassFormikExample from "./formik/ClassFormikExample";
 import FunctionFormikExample2 from "./formik/FunctionFormikExample2";
+import ReduxExample from "./react-redux/Redux/ReduxExample";
+import ReduxToolkitExample from "./react-redux/Toolkit/ReduxToolkitExample";
 
 function App() {
   return (<>
@@ -100,7 +102,9 @@ function App() {
     {/* <ComponentDidCatchExample/> */}
     {/* <FunctionFormikExample/> */}
     {/* <ClassFormikExample/> */}
-    <FunctionFormikExample2/>
+    {/* <FunctionFormikExample2/> */}
+    {/* <ReduxExample/> */}
+    <ReduxToolkitExample/>
   </>);
 }
 
