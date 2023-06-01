@@ -42,6 +42,7 @@ import ClassFormikExample from "./formik/ClassFormikExample";
 import FunctionFormikExample2 from "./formik/FunctionFormikExample2";
 import ReduxExample from "./react-redux/Redux/ReduxExample";
 import ReduxToolkitExample from "./react-redux/Toolkit/ReduxToolkitExample";
+import GetAllAccountComponent from "./react-redux/Toolkit/GetAllAccountComponent";
 
 function App() {
   return (<>
@@ -104,7 +105,8 @@ function App() {
     {/* <ClassFormikExample/> */}
     {/* <FunctionFormikExample2/> */}
     {/* <ReduxExample/> */}
-    <ReduxToolkitExample/>
+    {/* <ReduxToolkitExample/> */}
+    <GetAllAccountComponent/>
   </>);
 }
 
