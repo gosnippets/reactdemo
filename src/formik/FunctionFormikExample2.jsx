@@ -33,12 +33,12 @@ export default function FunctionFormikExample2() {
                         <div className='col-12 mb-3'>
                             <label htmlFor='email' className='mb-1 fw-bold'>Email</label>
                             <input type='email' value={formik.values.email} onChange={formik.handleChange} onBlur={formik.handleBlur} className='form-control' id='email' name='email' placeholder='Enter email' />
-                            {formik.touched.name && formik.errors.email && <div className='text-danger'>{formik.errors.email}</div>}
+                            {formik.touched.email && formik.errors.email && <div className='text-danger'>{formik.errors.email}</div>}
                         </div>
                         <div className='col-12 mb-3'>
                             <label htmlFor='password' className='mb-1 fw-bold'>Password</label>
                             <input type='password' value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} className='form-control' id='password' name='password' placeholder='Enter password' />
-                            {formik.touched.name && formik.errors.password && <div className='text-danger'>{formik.errors.password}</div>}
+                            {formik.touched.password && formik.errors.password && <div className='text-danger'>{formik.errors.password}</div>}
                         </div>
                         <div className='col-12'>
                         <button type='submit' className='btn btn-primary' disabled={!(formik.isValid && formik.dirty)}>Submit</button>

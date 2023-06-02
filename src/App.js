@@ -43,6 +43,9 @@ import FunctionFormikExample2 from "./formik/FunctionFormikExample2";
 import ReduxExample from "./react-redux/Redux/ReduxExample";
 import ReduxToolkitExample from "./react-redux/Toolkit/ReduxToolkitExample";
 import GetAllAccountComponent from "./react-redux/Toolkit/GetAllAccountComponent";
+import AddNewAccountToolkit from "./react-redux/Toolkit/AddNewAccountToolkit";
+import AccountDetailsToolkit from "./react-redux/Toolkit/AccountDetailsToolkit";
+import EditAccountDetailsToolkit from "./react-redux/Toolkit/EditAccountDetailsToolkit";
 
 function App() {
   return (<>
@@ -106,7 +109,17 @@ function App() {
     {/* <FunctionFormikExample2/> */}
     {/* <ReduxExample/> */}
     {/* <ReduxToolkitExample/> */}
-    <GetAllAccountComponent/>
+    {/* <GetAllAccountComponent/> */}
+
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<GetAllAccountComponent />} /> 
+        <Route path="/account/new" element={<AddNewAccountToolkit />} />
+        <Route path="/account/:accountid" element={<AccountDetailsToolkit />} />
+        <Route path="/account/edit/:accountid" element={<EditAccountDetailsToolkit />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
   </>);
 }
 
