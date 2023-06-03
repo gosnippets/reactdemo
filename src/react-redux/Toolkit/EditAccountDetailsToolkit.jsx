@@ -3,7 +3,7 @@ import { Formik } from 'formik'
 import * as Yup from "yup";
 import { useDispatch, useSelector } from 'react-redux';
 import { getAccountDetails, updateAccount } from './slices/accountSlice';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const SignupSchema = Yup.object().shape({
   username: Yup.string().required("Username is Required"),
@@ -13,9 +13,13 @@ const SignupSchema = Yup.object().shape({
 
 
 export default function EditAccountDetailsToolkit() {
-  const { account, status, error } = useSelector((state) => state.accounts);
+  const { account, status, error } = useSelector((state) => {
+    console.log("EditAccountDetailsToolkit",state)
+    return state.accounts;
+  });
   const dispatch = useDispatch();
   const { accountid } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getAccountDetails(accountid))
@@ -23,21 +27,26 @@ export default function EditAccountDetailsToolkit() {
 
   const handleSubmit = (values, { resetForm }) => {
     console.log("values", values);
-    dispatch(updateAccount(accountid, values));
-    resetForm();
+    dispatch(updateAccount({ id: accountid, data: values }));
+    setTimeout(() => {
+      navigate("/")
+    }, 1000)
   }
 
-  console.log("Account:", account);
+  useEffect(() => {
+    console.log("account", account)
+  }, [account])
+
+  if (status === "updated") {
+    return (<>
+      <div>Account Details Updated</div>
+      <button className='btn btn-primary' onClick={() => navigate("/")}>Home</button>
+    </>)
+  }
 
   return (
     <div className='m-5' style={{ width: "50%" }}>
       <h1>Update Account</h1>
-      {/* {status === "succeeded" && (
-        <div className="alert alert-danger" role="alert">
-          Account Successfully Updated!!
-        </div>
-      )} */}
-
       {status === "failed" && (<div className="alert alert-warning" role="alert">{error}</div>)}
       {account && account.username && (
         <Formik

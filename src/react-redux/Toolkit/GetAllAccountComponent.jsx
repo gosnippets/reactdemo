@@ -6,7 +6,10 @@ import { Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 export default function GetAllAccountComponent() {
-    const { total, accounts, status, error } = useSelector((state) => state.accounts);
+    const { total, accounts, status, error } = useSelector((state) => {
+        console.log(state)
+        return state.accounts;
+    });
     const [accountKeys, setAccountKeys] = useState([])
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -52,7 +55,7 @@ export default function GetAllAccountComponent() {
                                     <TableCell >{accounts[id].email}</TableCell>
                                     <TableCell>{accounts[id].password}</TableCell>
                                     <TableCell>
-                                        <button onClick={() => navigate("/account/edit/"+id)}>Edit</button>
+                                        <button onClick={() => navigate("/account/edit/" + id)}>Edit</button>
                                         {/* <button onClick={() => handleDeleteAccount(id)}>Delete</button> */}
                                     </TableCell>
                                 </TableRow>

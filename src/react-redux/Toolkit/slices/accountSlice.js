@@ -4,36 +4,27 @@ import { API_BASE_URL } from "../../../constants/Constatnts";
 
 export const getAllAccounts = createAsyncThunk("account/getAllAccount", async () => {
     const response = await axios.get(API_BASE_URL + "list");
-    console.log("Response", response.data)
     return response.data;
 });
 
 export const getAccountDetails = createAsyncThunk("account/getAccountDetails", async (id) => {
-    console.log("ID",id);
     const response = await axios.get(API_BASE_URL + id);
-    console.log("Response", response.data)
     return response.data;
 });
 
 export const createAccount = createAsyncThunk("account/createAccount", async (data) => {
-    console.log("Data", data);
-
     const response = await axios.post(API_BASE_URL + "addaccount", data);
-    console.log("Response", response.data)
     return response.data;
 });
 
-export const updateAccount = createAsyncThunk("account/updateAccount", async (id, data) => {
-    console.log("Data",id, data);
-
-    // const response = await axios.post(API_BASE_URL + id, data);
-    // console.log("Response", response.data)
-    // return response.data;
+export const updateAccount = createAsyncThunk("account/updateAccount", async (data) => {
+    const response = await axios.put(API_BASE_URL + data.id, data.data);
+    return response.data;
 });
 
 const accountSlice = createSlice({
     name: "accounts",
-    initialState: { total: 1500,account: {}, accounts: {}, status: 'idle', error: null },
+    initialState: { total: 1500, account: {}, accounts: {}, status: 'idle', error: null },
     reducers: {
         addition: (state, action) => {
             state.total += Number(action.payload);
@@ -49,6 +40,7 @@ const accountSlice = createSlice({
         [getAllAccounts.fulfilled]: (state, action) => {
             state.status = 'succeeded';
             state.accounts = action.payload;
+            state.account ={};
         },
         [getAllAccounts.rejected]: (state, action) => {
             state.status = 'failed';
@@ -83,8 +75,7 @@ const accountSlice = createSlice({
             state.status = 'loading'
         },
         [updateAccount.fulfilled]: (state, action) => {
-            state.status = 'succeeded';
-            state.accounts = action.payload;
+            state.status = 'updated';
         },
         [updateAccount.rejected]: (state, action) => {
             state.status = 'failed';
